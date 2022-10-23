@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h2>Stocks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for buy in buys %}
+                        <tr>
+                            <td>{{ buy["stock_symbol"] }}</td>
+                            <td>{{ buy["shares"] }}</td>
+                            <td>{{ buy["share_price"] }}</td>
+                            <td>{{ buy["price"] }}</td>
+                        </tr>
+                        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
